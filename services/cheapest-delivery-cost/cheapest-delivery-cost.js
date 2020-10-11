@@ -7,14 +7,12 @@ const calculateCheapestDeliveryCost = (graphtext, route) => {
   try {
     let [currentNode, ...nextNodes] = graph.shortestPath(sourceNode, targetNode)
 
-    // Refactor
     let sumWeight = 0
-    for (let i = 0; i < nextNodes.length; i++) {
-      const nextNode = nextNodes[i]
+    nextNodes.forEach((nextNode) => {
       const weight = graph.getEdgeWeight(currentNode, nextNode, 0)
       sumWeight += weight
       currentNode = nextNode
-    }
+    })
     return sumWeight
   } catch (e) {
     // HACK: with try-catch shortest path
