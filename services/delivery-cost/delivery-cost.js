@@ -1,4 +1,4 @@
-const { createGraph } = require('../../lib/graph')
+const { createGraph } = require('../../lib/graph/graph')
 
 const calculateDeliveryCost = (graphtext, route) => {
   const graph = createGraph(graphtext)

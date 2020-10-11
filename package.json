@@ -10,6 +10,7 @@
     "test": "jest"
   },
   "devDependencies": {
+    "codecov": "^3.8.0",
     "jest": "^26.5.2"
   },
   "dependencies": {
@@ -20,5 +21,8 @@
     "graph-data-structure": "^1.13.0",
     "lodash": "^4.17.20",
     "numeral": "^2.0.6"
+  },
+  "jest": {
+    "collectCoverage": true
   }
 }

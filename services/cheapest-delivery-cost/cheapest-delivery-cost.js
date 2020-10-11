@@ -1,4 +1,4 @@
-const { createGraph } = require('../../lib/graph')
+const { createGraph } = require('../../lib/graph/graph')
 
 const calculateCheapestDeliveryCost = (graphtext, route) => {
   let [sourceNode, targetNode] = route.split('-')
