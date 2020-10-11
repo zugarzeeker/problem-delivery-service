@@ -26,9 +26,22 @@ $ yarn start # or npm start
 
 ## Automated Tests
 
+how to run tests
+
+### Unit Test
+
 ```
 $ npm run unit-test
-$ npm run system-test # run `npm start` to start service before run `npm run system-test`
+```
+
+### System Test
+
+have to run `npm start` to start service before run `npm run system-test`
+
+```
+$ npm run system-test
+```
+
 ```
 
 ## API Docs
@@ -44,6 +57,10 @@ testing
 ## Scenario Example
 
 ```
-[start service]
---> [delivery-cost] or [cheapest-delivery-cost] or [count-possible-routes]
+
+[start service] --> [delivery-cost] or [cheapest-delivery-cost] or
+[count-possible-routes]
+
+```
+
 ```
