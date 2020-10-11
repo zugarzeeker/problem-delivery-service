@@ -7,8 +7,9 @@
   "license": "MIT",
   "scripts": {
     "start": "PORT=6000 node server.js",
-    "test": "jest",
-    "test:unit": "jest --config jest.unit.config.json"
+    "test": "npm run unit-test",
+    "unit-test": "jest --config jest.unit.config.json",
+    "system-test": "newman run eko-delivery-service.postman_collection.json"
   },
   "devDependencies": {
     "jest": "^26.5.2"
@@ -22,6 +23,5 @@
     "joi": "^17.2.1",
     "lodash": "^4.17.20",
     "numeral": "^2.0.6"
-  },
-  "jest": {}
+  }
 }
