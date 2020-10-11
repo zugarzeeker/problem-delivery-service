@@ -54,13 +54,13 @@ module.exports = {
       limitDistance,
       sameRouteEnable,
     } = payload
-    const cost = countPossibleRoutes(graphtext, `${source}-${destination}`, {
+    const count = countPossibleRoutes(graphtext, `${source}-${destination}`, {
       limitStops,
       limitDistance,
       sameRouteEnable,
     })
     return {
-      cost,
+      count,
     }
   },
 }
