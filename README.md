@@ -28,7 +28,7 @@ $ yarn start # or npm start
 
 ```
 $ npm run unit-test
-$ npm run system-test
+$ npm run system-test # run `npm start` to start service before run `npm run system-test`
 ```
 
 ## API Docs

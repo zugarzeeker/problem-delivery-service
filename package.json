@@ -12,7 +12,8 @@
     "system-test": "newman run eko-delivery-service.postman_collection.json"
   },
   "devDependencies": {
-    "jest": "^26.5.2"
+    "jest": "^26.5.2",
+    "newman": "^5.2.0"
   },
   "dependencies": {
     "body-parser": "^1.19.0",
