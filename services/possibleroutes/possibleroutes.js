@@ -41,6 +41,7 @@ const calculatePossibleRoutes = (
       const targetPath = `${u} -> ${v}`
       if (!sameRouteEnable) {
         // TODO: Refactor checking existPath string -> object
+        // ระวังการ mutation เวลาโยน object ตัวเดียวกัน (ถ้าใช้การ clone ก็อาจจะช้าได้)
         const existPath = path.includes(targetPath)
         // const existPath = existPaths[targetPath]
         log({
