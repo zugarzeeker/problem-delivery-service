@@ -16,7 +16,6 @@ const countPossibleRoutes = (
   let [sourceNode, targetNode] = route.split('-')
 
   let countPath = 0
-  //   let existPaths = {}
   const visited = {}
   function traverse(
     u,
@@ -40,10 +39,7 @@ const countPossibleRoutes = (
       const updatedPath = `${path} -> ${v}`
       const targetPath = `${u} -> ${v}`
       if (!sameRouteEnable) {
-        // TODO: Refactor checking existPath string -> object
-        // ระวังการ mutation เวลาโยน object ตัวเดียวกัน (ถ้าใช้การ clone ก็อาจจะช้าได้)
         const existPath = path.includes(targetPath)
-        // const existPath = existPaths[targetPath]
         log({
           existPath,
           updatedPath,
@@ -54,7 +50,6 @@ const countPossibleRoutes = (
         if (existPath) {
           continue
         }
-        // existPaths[targetPath] = true
       }
       const weight = graph.getEdgeWeight(u, v, 0)
       const newDistance = distance + weight
