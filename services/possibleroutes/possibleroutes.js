@@ -16,7 +16,7 @@ const calculatePossibleRoutes = (
   let [sourceNode, targetNode] = route.split('-')
 
   let countPath = 0
-  let existPaths = {}
+  //   let existPaths = {}
   const visited = {}
   function traverse(
     u,
