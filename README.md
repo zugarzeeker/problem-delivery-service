@@ -34,6 +34,7 @@ $ npm run system-test
 ## API Docs
 
 for manual testing
+([postman-collection](./eko-delivery-service.postman_collection.json))
 
 - example-sum
 - create-graph

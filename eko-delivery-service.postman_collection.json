@@ -1,0 +1,208 @@
+{
+	"info": {
+		"_postman_id": "65d4520d-251c-418a-9de5-4bbfb7dbd043",
+		"name": "eko-delivery-service",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Example Sum",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"b\": 3,\n    \"a\": 2\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:6000/example-sum",
+					"host": [
+						"localhost"
+					],
+					"port": "6000",
+					"path": [
+						"example-sum"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delivery Cost",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"graphtext\": \"AB1, AC4, AD10, BE3, CD4, CF2, DE1, EB3, EA2, FD1\",\n    \"deliveryRoute\": [\"A\", \"B\", \"E\"]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:6000/delivery-cost",
+					"host": [
+						"localhost"
+					],
+					"port": "6000",
+					"path": [
+						"delivery-cost"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Count Possible Routes [A]",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"graphtext\": \"AB1, AC4, AD10, BE3, CD4, CF2, DE1, EB3, EA2, FD1, DZ1000\",\n    \"source\": \"E\",\n    \"destination\": \"D\",\n    \"sameRouteEnable\": false,\n    \"limitStops\": 4\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:6000/count-possible-routes",
+					"host": [
+						"localhost"
+					],
+					"port": "6000",
+					"path": [
+						"count-possible-routes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Count Possible Routes [B]",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"graphtext\": \"AB1, AC4, AD10, BE3, CD4, CF2, DE1, EB3, EA2, FD1, DZ1000\",\n    \"source\": \"E\",\n    \"destination\": \"E\",\n    \"sameRouteEnable\": false\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:6000/count-possible-routes",
+					"host": [
+						"localhost"
+					],
+					"port": "6000",
+					"path": [
+						"count-possible-routes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Count Possible Routes [Bonus]",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"graphtext\": \"AB1, AC4, AD10, BE3, CD4, CF2, DE1, EB3, EA2, FD1, DZ1000\",\n    \"source\": \"E\",\n    \"destination\": \"E\",\n    \"limitDistance\": 20,\n    \"sameRouteEnable\": true\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:6000/count-possible-routes",
+					"host": [
+						"localhost"
+					],
+					"port": "6000",
+					"path": [
+						"count-possible-routes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cheapest Delivery Cost",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"graphtext\": \"AB1, AC4, AD10, BE3, CD4, CF2, DE1, EB3, EA2, FD1, DZ1000\",\n    \"source\": \"E\",\n    \"destination\": \"D\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:6000/cheapest-delivery-cost",
+					"host": [
+						"localhost"
+					],
+					"port": "6000",
+					"path": [
+						"cheapest-delivery-cost"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
