@@ -12,11 +12,6 @@ const calculateCheapestDeliveryCost = (graphtext, route) => {
     for (let i = 0; i < nextNodes.length; i++) {
       const nextNode = nextNodes[i]
       const weight = graph.getEdgeWeight(currentNode, nextNode, 0)
-      // TODO: Check Perfomance
-      const pathExist = graph.adjacent(currentNode).includes(nextNode)
-      if (!pathExist) {
-        return 'No Such Route'
-      }
       sumWeight += weight
       currentNode = nextNode
     }
