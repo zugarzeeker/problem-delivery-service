@@ -13,6 +13,7 @@ const calculatePossibleRoutes = (
 
   let countPath = 0
   let existPaths = {}
+  const visited = {}
   function traverse(
     u,
     path = sourceNode,
@@ -25,7 +26,8 @@ const calculatePossibleRoutes = (
   ) {
     log(path)
     const nextNodes = graph.adjacent(u)
-    if (countStop >= limitStops + 1) {
+    visited[u] = true
+    if (countStop >= limitStops) {
       return
     }
     for (let i = 0; i < nextNodes.length; i++) {
@@ -35,23 +37,23 @@ const calculatePossibleRoutes = (
       if (!sameRouteEnable) {
         const existPath = path.includes(targetPath)
         // const existPath = existPaths[targetPath]
-        // log({
-        //   existPath,
-        //   updatedPath,
-        //   u,
-        //   v,
-        //   path,
-        // })
+        log({
+          existPath,
+          updatedPath,
+          u,
+          v,
+          path,
+        })
         if (existPath) {
           continue
         }
         existPaths[targetPath] = true
       }
       if (v === targetNode) {
-        // log('[found]', updatedPath)
+        log('[found]', updatedPath)
         countPath++
         if (!sameRouteEnable) {
-          return
+          continue
         }
       }
       traverse(v, updatedPath, countStop + 1, {
