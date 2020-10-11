@@ -27,7 +27,7 @@ $ yarn start # or npm start
 ## Automated Tests
 
 ```
-$ npm run test-unit
+$ npm run unit-test
 $ npm run system-test
 ```
 
