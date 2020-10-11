@@ -37,24 +37,13 @@ $ npm run system-test
 testing
 
 - example-sum
-- create-graph
 - delivery-cost
 - cheapest-delivery-cost
 - count-possible-routes
-- delete-graph
 
-## Scenario Example 1
+## Scenario Example
 
 ```
 [run service]
 --> [delivery-cost] or [cheapest-delivery-cost] or [count-possible-routes]
-```
-
-## Scenario Example 2
-
-```
-[run service]
---> [create-graph]
---> [delivery-cost] or [cheapest-delivery-cost] or [count-possible-routes]
---> [delete-graph]
 ```
