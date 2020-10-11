@@ -1,6 +1,6 @@
 {
   "name": "eko-delivery-service",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "main": "index.js",
   "repository": "git@github.com:zugarzeeker/eko-delivery-service.git",
   "author": "Supanut Apikulvanich <supanut.overload@gmail.com>",
