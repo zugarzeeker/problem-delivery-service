@@ -44,6 +44,6 @@ testing
 ## Scenario Example
 
 ```
-[run service]
+[start service]
 --> [delivery-cost] or [cheapest-delivery-cost] or [count-possible-routes]
 ```
