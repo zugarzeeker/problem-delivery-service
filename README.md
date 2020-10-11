@@ -42,8 +42,6 @@ have to run `npm start` to start service before run `npm run system-test`
 $ npm run system-test
 ```
 
-```
-
 ## API Docs
 
 [postman-collection](./eko-delivery-service.postman_collection.json) for manual
@@ -60,6 +58,8 @@ testing
 
 [start service] --> [delivery-cost] or [cheapest-delivery-cost] or
 [count-possible-routes]
+
+```
 
 ```
 
