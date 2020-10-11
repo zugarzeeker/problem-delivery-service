@@ -16,7 +16,6 @@ const requestSchemaB = Joi.object().keys({
   lessThanDistance: Joi.number().required().positive(),
   sameRouteEnable: Joi.boolean().required(),
 })
-// TODO: not sure this case (should test more)
 const requestSchemaC = Joi.object().keys({
   graph: graphSchema.required(),
   source: Joi.string().required().max(1).pattern(new RegExp('[A-Z]')),
