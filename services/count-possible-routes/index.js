@@ -1,40 +1,35 @@
 const { countPossibleRoutes } = require('./count-possible-routes')
+const { graphSchema } = require('../../lib/api')
 const Joi = require('joi')
 
 const requestSchemaA = Joi.object().keys({
-  graphtext: Joi.string().required().example('AB1, BC2'),
-  source: Joi.string().required().max(1).uppercase(),
-  destination: Joi.string().required().max(1).uppercase(),
+  graph: graphSchema.required(),
+  source: Joi.string().required().max(1).pattern(new RegExp('[A-Z]')),
+  destination: Joi.string().required().max(1).pattern(new RegExp('[A-Z]')),
   limitStops: Joi.number().required().positive(),
   sameRouteEnable: Joi.boolean().required(),
 })
 const requestSchemaB = Joi.object().keys({
-  graphtext: Joi.string().required().example('AB1, BC2'),
-  source: Joi.string().required().max(1).uppercase(),
-  destination: Joi.string().required().max(1).uppercase(),
+  graph: graphSchema.required(),
+  source: Joi.string().required().max(1).pattern(new RegExp('[A-Z]')),
+  destination: Joi.string().required().max(1).pattern(new RegExp('[A-Z]')),
   limitDistance: Joi.number().required().positive(),
   sameRouteEnable: Joi.boolean().required(),
 })
 // TODO: not sure this case (should test more)
 const requestSchemaC = Joi.object().keys({
-  graphtext: Joi.string().required().example('AB1, BC2'),
-  source: Joi.string().required().max(1).uppercase(),
-  destination: Joi.string().required().max(1).uppercase(),
+  graph: graphSchema.required(),
+  source: Joi.string().required().max(1).pattern(new RegExp('[A-Z]')),
+  destination: Joi.string().required().max(1).pattern(new RegExp('[A-Z]')),
   limitStops: Joi.number().required().positive(),
   limitDistance: Joi.number().required().positive(),
   sameRouteEnable: Joi.boolean().required(),
 })
 const requestSchemaD = Joi.object().keys({
-  graphtext: Joi.string().required().example('AB1, BC2'),
-  source: Joi.string().required().max(1).uppercase(),
-  destination: Joi.string().required().max(1).uppercase(),
+  graph: graphSchema.required(),
+  source: Joi.string().required().max(1).pattern(new RegExp('[A-Z]')),
+  destination: Joi.string().required().max(1).pattern(new RegExp('[A-Z]')),
   sameRouteEnable: Joi.boolean().required().valid(false),
-})
-const requestSchemaBonus = Joi.object().keys({
-  graphtext: Joi.string().required().example('AB1, BC2'),
-  source: Joi.string().required().max(1).uppercase(),
-  destination: Joi.string().required().max(1).uppercase(),
-  sameRouteEnable: Joi.boolean().required().valid(true),
 })
 module.exports = {
   path: '/count-possible-routes',
@@ -43,22 +38,25 @@ module.exports = {
     requestSchemaB,
     requestSchemaC,
     requestSchemaD,
-    requestSchemaBonus,
   ),
   handler: (payload) => {
     const {
-      graphtext,
+      graph,
       source,
       destination,
       limitStops,
       limitDistance,
       sameRouteEnable,
     } = payload
-    const count = countPossibleRoutes(graphtext, `${source}-${destination}`, {
-      limitStops,
-      limitDistance,
-      sameRouteEnable,
-    })
+    const count = countPossibleRoutes(
+      graph.join(', '),
+      `${source}-${destination}`,
+      {
+        limitStops,
+        limitDistance,
+        sameRouteEnable,
+      },
+    )
     return {
       count,
     }

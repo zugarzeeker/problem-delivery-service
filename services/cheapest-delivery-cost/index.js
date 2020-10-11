@@ -1,17 +1,18 @@
 const { calculateCheapestDeliveryCost } = require('./cheapest-delivery-cost')
+const { graphSchema } = require('../../lib/api')
 const Joi = require('joi')
 
 module.exports = {
   path: '/cheapest-delivery-cost',
   requestSchema: Joi.object().keys({
-    graphtext: Joi.string().required().example('AB1, BC2'),
-    source: Joi.string().required().max(1).uppercase(),
-    destination: Joi.string().required().max(1).uppercase(),
+    graph: graphSchema.required(),
+    source: Joi.string().required().max(1).pattern(new RegExp('[A-Z]')),
+    destination: Joi.string().required().max(1).pattern(new RegExp('[A-Z]')),
   }),
   handler: (payload) => {
-    const { graphtext, source, destination } = payload
+    const { graph, source, destination } = payload
     const cost = calculateCheapestDeliveryCost(
-      graphtext,
+      graph.join(', '),
       `${source}-${destination}`,
     )
     return {
