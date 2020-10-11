@@ -1,6 +1,6 @@
 const { createGraph } = require('../../lib/graph')
 
-const debug = true
+const debug = false
 const log = (...o) => debug && console.log(...o)
 
 const calculatePossibleRoutes = (
