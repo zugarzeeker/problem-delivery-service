@@ -1,5 +1,15 @@
 # problem-delivery-service
 
+[![Build status][travis-svg]][travis]
+[![Code coverage][codecov-svg]][codecov]
+
+[travis]: https://travis-ci.org/zugarzeeker/problem-delivery-service
+[travis-svg]: https://img.shields.io/travis/zugarzeeker/problem-delivery-service.svg?style=flat
+[npm]: https://www.npmjs.com/package/problem-delivery-service
+[npm-svg]: https://img.shields.io/npm/v/problem-delivery-service.svg?style=flat
+[codecov]: https://codecov.io/gh/zugarzeeker/problem-delivery-service/src/master/README.md
+[codecov-svg]: https://img.shields.io/codecov/c/github/zugarzeeker/problem-delivery-service.svg
+
 Provide their customers with information about delivery route.
 
 Service will compute as follows.
