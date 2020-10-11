@@ -31,6 +31,13 @@ describe(`CountPossibleRoutes (${GRAPH_TEXT})`, () => {
     3,
   )
 
+  testcountPossibleRoutes(
+    'AB1, BA1, AC1, CA1, AD1, DA1',
+    'A-A',
+    { sameRouteEnable: false },
+    3,
+  )
+
   // BONUS
   testcountPossibleRoutes(
     'AB1, BA1',
@@ -72,6 +79,34 @@ describe(`CountPossibleRoutes (${GRAPH_TEXT})`, () => {
     'A-B',
     { sameRouteEnable: true, lessThanDistance: 2 },
     1,
+  )
+
+  testcountPossibleRoutes(
+    'AB1, BA1, AC1, CA1',
+    'A-A',
+    { sameRouteEnable: true, lessThanDistance: 2 },
+    'No Such Route',
+  )
+
+  testcountPossibleRoutes(
+    'AB1, BA1, AC1, CA1',
+    'A-A',
+    { sameRouteEnable: true, lessThanDistance: 3 },
+    2,
+  )
+
+  testcountPossibleRoutes(
+    'AB1, BA1, AC1, CA1',
+    'A-A',
+    { sameRouteEnable: true, lessThanDistance: 4 },
+    2,
+  )
+
+  testcountPossibleRoutes(
+    'AB1, BA1, AC1, CA1',
+    'A-A',
+    { sameRouteEnable: true, lessThanDistance: 5 },
+    6,
   )
 
   testcountPossibleRoutes(
