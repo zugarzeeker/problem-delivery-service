@@ -15,11 +15,45 @@ Service will compute as follows.
 2. Install dependencies
 
 ```
-$ yarn
+$ yarn # or npm install
 ```
 
-or
+3. Start Service
 
 ```
-$ npm install
+$ yarn start # or npm start
+```
+
+## Commands
+
+```
+$ npm run test-unit
+$ npm run system-test
+```
+
+## API Docs
+
+<!-- [Postman Collection]() -->
+
+- example-sum
+- create-graph
+- delivery-cost
+- cheapest-delivery-cost
+- count-possible-routes
+- delete-graph
+
+## Scenario Example 1
+
+```
+[run service]
+--> [delivery-cost] or [cheapest-delivery-cost] or [count-possible-routes]
+```
+
+## Scenario Example 2
+
+```
+[run service]
+--> [create-graph]
+--> [delivery-cost] or [cheapest-delivery-cost] or [count-possible-routes]
+--> [delete-graph]
 ```
