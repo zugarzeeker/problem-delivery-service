@@ -12,7 +12,19 @@ limitStops = 4, sameRouteEnable = false
 
 ```json
 {
-  "graphtext": "AB1, AC4, AD10, BE3, CD4, CF2, DE1, EB3, EA2, FD1, DZ1000",
+  "graph": [
+    "AB1",
+    "AC4",
+    "AD10",
+    "BE3",
+    "CD4",
+    "CF2",
+    "DE1",
+    "EB3",
+    "EA2",
+    "FD1",
+    "DZ1000"
+  ],
   "source": "E",
   "destination": "D",
   "sameRouteEnable": false,
@@ -38,7 +50,19 @@ sameRouteEnable = false, no limit stops & distance
 
 ```json
 {
-  "graphtext": "AB1, AC4, AD10, BE3, CD4, CF2, DE1, EB3, EA2, FD1, DZ1000",
+  "graph": [
+    "AB1",
+    "AC4",
+    "AD10",
+    "BE3",
+    "CD4",
+    "CF2",
+    "DE1",
+    "EB3",
+    "EA2",
+    "FD1",
+    "DZ1000"
+  ],
   "source": "E",
   "destination": "E",
   "sameRouteEnable": false
@@ -63,7 +87,19 @@ sameRouteEnable = true, limitDistance = 20
 
 ```json
 {
-  "graphtext": "AB1, AC4, AD10, BE3, CD4, CF2, DE1, EB3, EA2, FD1, DZ1000",
+  "graph": [
+    "AB1",
+    "AC4",
+    "AD10",
+    "BE3",
+    "CD4",
+    "CF2",
+    "DE1",
+    "EB3",
+    "EA2",
+    "FD1",
+    "DZ1000"
+  ],
   "source": "E",
   "destination": "E",
   "limitDistance": 20,
