@@ -1,4 +1,4 @@
-const { createGraph } = require('../../lib/graph/graph')
+const { createGraph } = require('../../lib/graph')
 
 const debug = false
 const log = (...o) => debug && console.log(...o)
