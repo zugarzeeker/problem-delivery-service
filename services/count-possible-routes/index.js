@@ -6,14 +6,14 @@ const requestSchemaA = Joi.object().keys({
   graph: graphSchema.required(),
   source: Joi.string().required().max(1).pattern(new RegExp('[A-Z]')),
   destination: Joi.string().required().max(1).pattern(new RegExp('[A-Z]')),
-  limitStops: Joi.number().required().positive(),
+  maxStops: Joi.number().required().positive(),
   sameRouteEnable: Joi.boolean().required(),
 })
 const requestSchemaB = Joi.object().keys({
   graph: graphSchema.required(),
   source: Joi.string().required().max(1).pattern(new RegExp('[A-Z]')),
   destination: Joi.string().required().max(1).pattern(new RegExp('[A-Z]')),
-  limitDistance: Joi.number().required().positive(),
+  lessThanDistance: Joi.number().required().positive(),
   sameRouteEnable: Joi.boolean().required(),
 })
 // TODO: not sure this case (should test more)
@@ -21,8 +21,8 @@ const requestSchemaC = Joi.object().keys({
   graph: graphSchema.required(),
   source: Joi.string().required().max(1).pattern(new RegExp('[A-Z]')),
   destination: Joi.string().required().max(1).pattern(new RegExp('[A-Z]')),
-  limitStops: Joi.number().required().positive(),
-  limitDistance: Joi.number().required().positive(),
+  maxStops: Joi.number().required().positive(),
+  lessThanDistance: Joi.number().required().positive(),
   sameRouteEnable: Joi.boolean().required(),
 })
 const requestSchemaD = Joi.object().keys({
@@ -44,16 +44,16 @@ module.exports = {
       graph,
       source,
       destination,
-      limitStops,
-      limitDistance,
+      maxStops,
+      lessThanDistance,
       sameRouteEnable,
     } = payload
     const count = countPossibleRoutes(
       graph.join(', '),
       `${source}-${destination}`,
       {
-        limitStops,
-        limitDistance,
+        maxStops,
+        lessThanDistance,
         sameRouteEnable,
       },
     )

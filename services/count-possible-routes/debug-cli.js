@@ -8,7 +8,7 @@ const GRAPH_TEXT = 'AB1, AC4, AD10, BE3, CD4, CF2, DE1, EB3, EA2, FD1, DZ1000'
 console.log({
   result: countPossibleRoutes(GRAPH_TEXT, 'E-D', {
     sameRouteEnable: false,
-    limitStops: 4,
+    maxStops: 4,
   }),
 })
 console.log('=========[found]======================')

@@ -6,7 +6,7 @@ the number of possible delivery route between two towns
 
 `POST /count-possible-routes`
 
-limitStops = 4, sameRouteEnable = false
+maxStops = 4, sameRouteEnable = false
 
 ### Request
 
@@ -28,7 +28,7 @@ limitStops = 4, sameRouteEnable = false
   "source": "E",
   "destination": "D",
   "sameRouteEnable": false,
-  "limitStops": 4
+  "maxStops": 4
 }
 ```
 
@@ -81,7 +81,7 @@ sameRouteEnable = false, no limit stops & distance
 
 `POST /count-possible-routes`
 
-sameRouteEnable = true, limitDistance = 20
+sameRouteEnable = true, lessThanDistance = 20
 
 ### Request
 
@@ -102,7 +102,7 @@ sameRouteEnable = true, limitDistance = 20
   ],
   "source": "E",
   "destination": "E",
-  "limitDistance": 20,
+  "lessThanDistance": 20,
   "sameRouteEnable": true
 }
 ```

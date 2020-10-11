@@ -7,8 +7,8 @@ const countPossibleRoutes = (
   graphtext,
   route,
   {
-    limitStops = Infinity,
-    limitDistance = Infinity,
+    maxStops = Infinity,
+    lessThanDistance = Infinity,
     sameRouteEnable = false,
   } = {},
 ) => {
@@ -23,15 +23,15 @@ const countPossibleRoutes = (
     countStop = 0,
     distance = 0,
     {
-      limitStops = Infinity,
-      limitDistance = Infinity,
+      maxStops = Infinity,
+      lessThanDistance = Infinity,
       sameRouteEnable = false,
     } = {},
   ) {
     log(path)
     const nextNodes = graph.adjacent(u)
     visited[u] = true
-    if (countStop >= limitStops) {
+    if (countStop >= maxStops) {
       return
     }
     for (let i = 0; i < nextNodes.length; i++) {
@@ -54,7 +54,7 @@ const countPossibleRoutes = (
       const weight = graph.getEdgeWeight(u, v, 0)
       const newDistance = distance + weight
       if (v === targetNode) {
-        if (newDistance >= limitDistance) {
+        if (newDistance >= lessThanDistance) {
           continue
         }
         log('[found]', `[[ ${newDistance} ]]`, updatedPath)
@@ -64,8 +64,8 @@ const countPossibleRoutes = (
         }
       }
       traverse(v, updatedPath, countStop + 1, newDistance, {
-        limitStops,
-        limitDistance,
+        maxStops,
+        lessThanDistance,
         sameRouteEnable,
       })
     }
@@ -74,8 +74,8 @@ const countPossibleRoutes = (
   const startPath = sourceNode
   const distance = 0
   traverse(sourceNode, startPath, countPath, distance, {
-    limitStops,
-    limitDistance,
+    maxStops,
+    lessThanDistance,
     sameRouteEnable,
   })
   if (countPath === 0) {
