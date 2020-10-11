@@ -1,8 +1,10 @@
-# example-sum
+# delivery-cost
 
 the delivery cost of a certain route
 
 ## Example
+
+`POST /delivery-cost`
 
 ### Request
 

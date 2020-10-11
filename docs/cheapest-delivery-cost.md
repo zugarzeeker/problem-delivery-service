@@ -4,6 +4,8 @@ the cost of cheapest delivery route between two towns
 
 ## Example
 
+`POST /cheapest-delivery-cost`
+
 ### Request
 
 ```json

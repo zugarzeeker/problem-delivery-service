@@ -45,7 +45,7 @@ $ npm run system-test
 ## API Docs
 
 [postman-collection](./eko-delivery-service.postman_collection.json) for manual
-testing
+testing (RPC style)
 
 - [example-sum](./docs/example-sum.md)
 - [delivery-cost](./docs/delivery-cost.md)

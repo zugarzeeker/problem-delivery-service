@@ -4,6 +4,8 @@ the number of possible delivery route between two towns
 
 ## Example A
 
+`POST /count-possible-routes`
+
 limitStops = 4, sameRouteEnable = false
 
 ### Request
@@ -28,6 +30,8 @@ limitStops = 4, sameRouteEnable = false
 
 ## Example B
 
+`POST /count-possible-routes`
+
 sameRouteEnable = false, no limit stops & distance
 
 ### Request
@@ -50,6 +54,8 @@ sameRouteEnable = false, no limit stops & distance
 ```
 
 ## Example Bonus
+
+`POST /count-possible-routes`
 
 sameRouteEnable = true, limitDistance = 20
 
