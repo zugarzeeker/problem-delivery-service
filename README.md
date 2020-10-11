@@ -60,7 +60,3 @@ testing
 [count-possible-routes]
 
 ```
-
-```
-
-```
