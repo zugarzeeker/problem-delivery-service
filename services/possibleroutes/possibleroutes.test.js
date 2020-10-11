@@ -24,8 +24,12 @@ describe(`PossibleRoutes (${GRAPH_TEXT})`, () => {
     4,
   )
   testCalculatePossibleRoutes(GRAPH_TEXT, 'E-E', { sameRouteEnable: false }, 5)
-  // TODO: ===========================
-  // add test cases for limit stops!!!
-  // add test cases for limit bonus!!!
-  // =================================
+
+  // BONUS
+  testCalculatePossibleRoutes(
+    GRAPH_TEXT,
+    'E-E',
+    { sameRouteEnable: true, limitDistance: 20 },
+    29,
+  )
 })

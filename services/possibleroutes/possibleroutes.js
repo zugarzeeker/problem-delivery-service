@@ -1,12 +1,16 @@
 const { createGraph } = require('../../lib/graph')
 
-const debug = false
+const debug = true
 const log = (...o) => debug && console.log(...o)
 
 const calculatePossibleRoutes = (
   graphtext,
   route,
-  { limitStops = Infinity, sameRouteEnable = false } = {},
+  {
+    limitStops = Infinity,
+    limitDistance = Infinity,
+    sameRouteEnable = false,
+  } = {},
 ) => {
   const graph = createGraph(graphtext)
   let [sourceNode, targetNode] = route.split('-')
@@ -18,6 +22,7 @@ const calculatePossibleRoutes = (
     u,
     path = sourceNode,
     countStop = 0,
+    distance = 0,
     {
       limitStops = Infinity,
       limitDistance = Infinity,
@@ -49,14 +54,19 @@ const calculatePossibleRoutes = (
         }
         existPaths[targetPath] = true
       }
+      const weight = graph.getEdgeWeight(u, v, 0)
+      const newDistance = distance + weight
       if (v === targetNode) {
-        log('[found]', updatedPath)
+        if (newDistance >= limitDistance) {
+          continue
+        }
+        log('[found]', `[[ ${newDistance} ]]`, updatedPath)
         countPath++
         if (!sameRouteEnable) {
           continue
         }
       }
-      traverse(v, updatedPath, countStop + 1, {
+      traverse(v, updatedPath, countStop + 1, newDistance, {
         limitStops,
         limitDistance,
         sameRouteEnable,
@@ -65,7 +75,12 @@ const calculatePossibleRoutes = (
   }
 
   const startPath = sourceNode
-  traverse(sourceNode, startPath, countPath, { limitStops, sameRouteEnable })
+  const distance = 0
+  traverse(sourceNode, startPath, countPath, distance, {
+    limitStops,
+    limitDistance,
+    sameRouteEnable,
+  })
   if (countPath === 0) {
     return 'No Such Route'
   }
