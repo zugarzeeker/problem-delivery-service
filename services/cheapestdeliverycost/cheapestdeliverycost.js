@@ -2,16 +2,7 @@ const { createGraph } = require('../../lib/graph')
 
 const calculateCheapestDeliveryCost = (graphtext, route) => {
   let [sourceNode, targetNode] = route.split('-')
-  // HACK cycle with lowerCase
-  const graph = createGraph(graphtext, {
-    hackTargetNodeForShortestPath:
-      sourceNode === targetNode ? targetNode.toLowerCase() : '',
-  })
-
-  if (sourceNode === targetNode) {
-    targetNode = targetNode.toLowerCase()
-  }
-  // ===================================
+  const graph = createGraph(graphtext)
 
   try {
     let [currentNode, ...nextNodes] = graph.shortestPath(sourceNode, targetNode)
