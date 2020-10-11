@@ -47,10 +47,10 @@ $ npm run system-test
 [postman-collection](./eko-delivery-service.postman_collection.json) for manual
 testing
 
-- example-sum
-- delivery-cost
-- cheapest-delivery-cost
-- count-possible-routes
+- [example-sum](./docs/example-sum.md)
+- [delivery-cost](./docs/delivery-cost.md)
+- [count-possible-routes](./docs/count-possible-routes.md)
+- [cheapest-delivery-cost](./docs/cheapest-delivery-cost.md)
 
 ## Scenario Example
 
