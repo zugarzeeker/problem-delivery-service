@@ -33,8 +33,8 @@ $ npm run system-test
 
 ## API Docs
 
-for manual testing
-([postman-collection](./eko-delivery-service.postman_collection.json))
+[postman-collection](./eko-delivery-service.postman_collection.json) for manual
+testing
 
 - example-sum
 - create-graph
