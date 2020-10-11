@@ -1,15 +1,15 @@
 {
-  "name": "eko-delivery-service",
+  "name": "problem-delivery-service",
   "version": "1.0.0",
   "main": "index.js",
-  "repository": "git@github.com:zugarzeeker/eko-delivery-service.git",
+  "repository": "git@github.com:zugarzeeker/problem-delivery-service.git",
   "author": "Supanut Apikulvanich <supanut.overload@gmail.com>",
   "license": "MIT",
   "scripts": {
     "start": "PORT=6000 node server.js",
     "test": "npm run unit-test",
     "unit-test": "jest --config jest.unit.config.json",
-    "system-test": "newman run eko-delivery-service.postman_collection.json"
+    "system-test": "newman run problem-delivery-service.postman_collection.json"
   },
   "devDependencies": {
     "jest": "^26.5.2",

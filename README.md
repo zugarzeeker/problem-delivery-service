@@ -1,4 +1,4 @@
-# eko-delivery-service
+# problem-delivery-service
 
 Provide their customers with information about delivery route.
 
@@ -44,8 +44,8 @@ $ npm run system-test
 
 ## API Docs
 
-[postman-collection](./eko-delivery-service.postman_collection.json) for manual
-testing (RPC style)
+[postman-collection](./problem-delivery-service.postman_collection.json) for
+manual testing (RPC style)
 
 - [example-sum](./docs/example-sum.md)
 - [delivery-cost](./docs/delivery-cost.md)

@@ -1,0 +1,298 @@
+{
+  "info": {
+    "_postman_id": "65d4520d-251c-418a-9de5-4bbfb7dbd043",
+    "name": "problem-delivery-service",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Example Sum",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "56930d0e-6611-42e1-a54c-7c3506277701",
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {",
+              "    pm.response.to.have.status(200);",
+              "});",
+              "",
+              "pm.test(\"Your test name\", function () {",
+              "    var jsonData = pm.response.json();",
+              "    pm.expect(jsonData.result).to.eql(5);",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"b\": 3,\n    \"a\": 2\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "localhost:6000/example-sum",
+          "host": ["localhost"],
+          "port": "6000",
+          "path": ["example-sum"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delivery Cost",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "5e6199e6-a19d-4b24-a16f-c21ee384b842",
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {",
+              "    pm.response.to.have.status(200);",
+              "});",
+              "",
+              "pm.test(\"Your test name\", function () {",
+              "    var jsonData = pm.response.json();",
+              "    pm.expect(jsonData.cost).to.eql(4);",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "type": "text",
+            "value": ""
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"graphtext\": \"AB1, AC4, AD10, BE3, CD4, CF2, DE1, EB3, EA2, FD1\",\n    \"deliveryRoute\": [\"A\", \"B\", \"E\"]\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "localhost:6000/delivery-cost",
+          "host": ["localhost"],
+          "port": "6000",
+          "path": ["delivery-cost"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Count Possible Routes [A]",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "2d490858-2ba5-436f-b2bb-20e46e3b947b",
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {",
+              "    pm.response.to.have.status(200);",
+              "});",
+              "",
+              "pm.test(\"Your test name\", function () {",
+              "    var jsonData = pm.response.json();",
+              "    pm.expect(jsonData.count).to.eql(4);",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "type": "text",
+            "value": ""
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"graphtext\": \"AB1, AC4, AD10, BE3, CD4, CF2, DE1, EB3, EA2, FD1, DZ1000\",\n    \"source\": \"E\",\n    \"destination\": \"D\",\n    \"sameRouteEnable\": false,\n    \"limitStops\": 4\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "localhost:6000/count-possible-routes",
+          "host": ["localhost"],
+          "port": "6000",
+          "path": ["count-possible-routes"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Count Possible Routes [B]",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "606cd113-bd83-4178-84e0-fe1352c55c70",
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {",
+              "    pm.response.to.have.status(200);",
+              "});",
+              "",
+              "pm.test(\"Your test name\", function () {",
+              "    var jsonData = pm.response.json();",
+              "    pm.expect(jsonData.count).to.eql(5);",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "type": "text",
+            "value": ""
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"graphtext\": \"AB1, AC4, AD10, BE3, CD4, CF2, DE1, EB3, EA2, FD1, DZ1000\",\n    \"source\": \"E\",\n    \"destination\": \"E\",\n    \"sameRouteEnable\": false\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "localhost:6000/count-possible-routes",
+          "host": ["localhost"],
+          "port": "6000",
+          "path": ["count-possible-routes"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Count Possible Routes [Bonus]",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "55ae323f-3f91-41ad-a5cb-f727838ab46f",
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {",
+              "    pm.response.to.have.status(200);",
+              "});",
+              "",
+              "pm.test(\"Your test name\", function () {",
+              "    var jsonData = pm.response.json();",
+              "    pm.expect(jsonData.count).to.eql(29);",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "type": "text",
+            "value": ""
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"graphtext\": \"AB1, AC4, AD10, BE3, CD4, CF2, DE1, EB3, EA2, FD1, DZ1000\",\n    \"source\": \"E\",\n    \"destination\": \"E\",\n    \"limitDistance\": 20,\n    \"sameRouteEnable\": true\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "localhost:6000/count-possible-routes",
+          "host": ["localhost"],
+          "port": "6000",
+          "path": ["count-possible-routes"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Cheapest Delivery Cost",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "9692d936-5b49-4811-973b-e66a5d019383",
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {",
+              "    pm.response.to.have.status(200);",
+              "});",
+              "",
+              "pm.test(\"Your test name\", function () {",
+              "    var jsonData = pm.response.json();",
+              "    pm.expect(jsonData.cost).to.eql(9);",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "type": "text",
+            "value": ""
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"graphtext\": \"AB1, AC4, AD10, BE3, CD4, CF2, DE1, EB3, EA2, FD1, DZ1000\",\n    \"source\": \"E\",\n    \"destination\": \"D\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "localhost:6000/cheapest-delivery-cost",
+          "host": ["localhost"],
+          "port": "6000",
+          "path": ["cheapest-delivery-cost"]
+        }
+      },
+      "response": []
+    }
+  ],
+  "protocolProfileBehavior": {}
+}
