@@ -1,5 +1,6 @@
 {
   "collectCoverage": true,
+  "verbose": true,
   "testMatch": ["<rootDir>/**/*.test.js"],
   "testPathIgnorePatterns": ["/system-test/"]
 }
