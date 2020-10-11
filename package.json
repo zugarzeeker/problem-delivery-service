@@ -1,6 +1,6 @@
 {
   "name": "problem-delivery-service",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "main": "index.js",
   "repository": "git@github.com:zugarzeeker/problem-delivery-service.git",
   "author": "Supanut Apikulvanich <supanut.overload@gmail.com>",
