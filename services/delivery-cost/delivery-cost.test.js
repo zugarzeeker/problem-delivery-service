@@ -14,8 +14,6 @@ describe(`DeliveryCost (${GRAPH_TEXT})`, () => {
   testDeliveryCost('E-A-C-F', 8)
   testDeliveryCost('A-D-F', 'No Such Route')
   testDeliveryCost('A-F', 'No Such Route')
-  // TODO: Add test cases
-  // A-A
-  // A-B-A
-  // A-B-C-B-A
+  testDeliveryCost('B-E-B-E-B', 12)
+  testDeliveryCost('A-A', 'No Such Route')
 })
