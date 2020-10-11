@@ -7,6 +7,7 @@ const createServices = (app) => {
     // TODO: add module here | or dynamic required and generated automatically
     require('./example-sum'),
     require('./delivery-cost'),
+    require('./cheapest-delivery-cost'),
   ]
   modules.map(createEndpoint(app))
 }
