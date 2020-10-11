@@ -6,7 +6,7 @@
   "author": "Supanut Apikulvanich <supanut.overload@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "node server.js",
+    "start": "PORT=6000 node server.js",
     "test": "jest",
     "test:unit": "jest --config jest.unit.config.json"
   },
