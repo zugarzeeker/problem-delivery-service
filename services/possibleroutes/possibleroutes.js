@@ -52,7 +52,7 @@ const calculatePossibleRoutes = (
         if (existPath) {
           continue
         }
-        existPaths[targetPath] = true
+        // existPaths[targetPath] = true
       }
       const weight = graph.getEdgeWeight(u, v, 0)
       const newDistance = distance + weight
