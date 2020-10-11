@@ -33,7 +33,7 @@ $ npm run system-test
 
 ## API Docs
 
-<!-- [Postman Collection]() -->
+for manual testing
 
 - example-sum
 - create-graph
