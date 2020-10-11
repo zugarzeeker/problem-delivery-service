@@ -3,7 +3,7 @@ const { createGraph } = require('../../lib/graph')
 const debug = false
 const log = (...o) => debug && console.log(...o)
 
-const calculatePossibleRoutes = (
+const countPossibleRoutes = (
   graphtext,
   route,
   {
@@ -89,4 +89,4 @@ const calculatePossibleRoutes = (
   return countPath
 }
 
-module.exports.calculatePossibleRoutes = calculatePossibleRoutes
+module.exports.countPossibleRoutes = countPossibleRoutes

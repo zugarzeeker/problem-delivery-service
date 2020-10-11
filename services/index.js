@@ -8,6 +8,7 @@ const createServices = (app) => {
     require('./example-sum'),
     require('./delivery-cost'),
     require('./cheapest-delivery-cost'),
+    require('./count-possible-routes'),
   ]
   modules.map(createEndpoint(app))
 }
